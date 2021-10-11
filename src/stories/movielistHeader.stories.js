@@ -9,3 +9,4 @@ export default {
 export const Basic = () => <MovieListHeader title={'Discover Movies'} />;
 
 Basic.storyName = "Default";
+
