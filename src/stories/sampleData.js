@@ -72,9 +72,11 @@ export default {
       },
     ],
     status: "Released",
-    tagline: "Darkness rises... and light to meet it",
-    title: "Star Wars: The Last Jedi",
+    tagline: "Darkness rises... and light to meet it, i put this in",
+    title: "Star Wars: The Jedi",
     video: false,
     vote_average: 7,
     vote_count: 9692,
+
+   
   };
