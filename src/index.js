@@ -5,6 +5,7 @@ import MoviePage from "./pages/movieDetailsPage";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
 import MovieReviewPage from "./pages/movieReviewPage";
+import Upcoming from "./pages/upcoming";
 import SiteHeader from './components/siteHeader'
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         </li>
       </ul>
       <Switch>
+        <Route exact path="/movies/upcoming" component={Upcoming} />
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route path="/movies/:id" component={MoviePage} />
         <Route path="/reviews/:id" component={MovieReviewPage} />
