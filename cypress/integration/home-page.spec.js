@@ -52,9 +52,33 @@ describe("Home Page ", () => {
          cy.wrap($card).find("p").contains(matchingMovies[index].title);
        });
      });
+    //  it("should only display movies with x in the title", () => {
+    //   let searchString = "x";
+    //   let matchingMovies = filterByTitle(movies, searchString);
+    //   cy.get("#filled-search").clear().type(searchString); // Enter m in text box
+    //   cy.get(".MuiCardHeader-content").should(
+    //     "have.length",
+    //     matchingMovies.length
+    //   );
+    //   cy.get(".MuiCardHeader-content").each(($card, index) => {
+    //     cy.wrap($card).find("p").contains(matchingMovies[index].title);
+    //   });
+    });
    })
-   describe("By movie genre" ,() => {
-     // More later
-   })
- })
-})
+   describe("By movie genre", () => {
+    it("should display movies with the specified genre only", () => {
+       const selectedGenreId = 35;
+       const selectedGenreText = "Comedy";
+       const matchingMovies = filterByGenre(movies, selectedGenreId);
+       cy.get("#genre-select").click();
+       cy.get("li").contains(selectedGenreText).click();
+       cy.get(".MuiCardHeader-content").should(
+         "have.length",
+         matchingMovies.length
+       );
+       cy.get(".MuiCardHeader-content").each(($card, index) => {
+         cy.wrap($card).find("p").contains(matchingMovies[index].title);
+       });
+     });
+   });
+ });
