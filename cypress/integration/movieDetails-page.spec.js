@@ -31,19 +31,19 @@ describe("Movie Details Page", () => {
        
         describe("Base tests", () => {
           it("should display movie pictures", () => {
-            cy.get("div").contains("Picture");
+            cy.get("div").contains("https://image.tmdb.org/t/p/w500"+movie.poster_path);
           });
     
-        it("should display the movie's details", () => {
-          cy.get("h3").contains("Overview");
-          cy.get("h3").next().contains(movie.overview);
-          cy.get("ul")
-            .eq(1)
-            .within(() => {
-              const genreChips = movie.genres.map((g) => g.name);
-              genreChips.unshift("Genres");
-              cy.get("span").each(($card, index) => {
-                cy.wrap($card).contains(genreChips[index]);
+          it("should display the movie's details", () => {
+            cy.get("h3").contains("Overview");
+            cy.get("h3").next().contains(movie.overview);
+            cy.get("ul")
+              .eq(1)
+              .within(() => {
+                const genreChips = movie.genres.map((g) => g.name);
+                genreChips.unshift("Genres");
+                cy.get("span").each(($card, index) => {
+                  cy.wrap($card).contains(genreChips[index]);
               });
             });
         });

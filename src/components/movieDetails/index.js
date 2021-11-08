@@ -74,7 +74,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <Paper component="ul" className={classes.root}>
        
 
-           <Chip label={`Production Countries`}/>
+           <Chip label={`Production Countries`} className={classes.chip} color="primary"/>
            <Chip label={`France`}/>
            <Chip label={`Spain`}/>
 
