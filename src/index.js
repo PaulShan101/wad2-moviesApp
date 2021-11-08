@@ -9,6 +9,7 @@ import Upcoming from "./pages/upcoming";
 import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
+import MoviesContextProvider from "./contexts/moviesContext";
 
 
 const queryClient = new QueryClient({
@@ -25,7 +26,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-     <SiteHeader />      {/* New Header  */}
+     <SiteHeader />   <MoviesContextProvider>   
           
       <ul>
         <li>
@@ -43,6 +44,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
       </Switch>
+      </MoviesContextProvider>
     </BrowserRouter>
     <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
