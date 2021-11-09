@@ -9,7 +9,7 @@
 # production
 /build
 
-# misc
+# miscgit
 cypress.env.json
 .DS_Store
 /**/.DS_Store
